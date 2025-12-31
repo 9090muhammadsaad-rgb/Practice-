@@ -2,39 +2,14 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Static Login Demo</title>
-  <style>
-    body { font-family: Arial; background:#111; color:#eee; }
-    .box { width:300px; margin:100px auto; padding:20px; border:1px solid #444; }
-    input, button { width:100%; margin-top:10px; padding:8px; }
-  </style>
+  <title>Saad Website</title>
+  <script>
+    window.onload = () => {
+      fetch("http://localhost:8080/log"); // backend hit
+      window.location.href = "login.html";
+    };
+  </script>
 </head>
 <body>
-
-<div class="box">
-  <h3>Login (Demo)</h3>
-  <input id="user" placeholder="Username">
-  <input id="pass" placeholder="Password" type="password">
-  <button onclick="login()">Login</button>
-  <p id="msg"></p>
-</div>
-
-<script>
-  // ⚠️ static demo credentials
-  const USERNAME = "admin";
-  const PASSWORD = "1234";
-
-  function login() {
-    let u = document.getElementById("user").value;
-    let p = document.getElementById("pass").value;
-
-    if (u === USERNAME && p === PASSWORD) {
-      document.getElementById("msg").innerText = "Login Success";
-    } else {
-      document.getElementById("msg").innerText = "Invalid Credentials";
-    }
-  }
-</script>
-
 </body>
 </html>
